@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import moment from 'moment-timezone';
+import classNames from 'classnames';
 
 class App extends Component {
 
@@ -60,8 +61,17 @@ class Week extends React.Component {
 
 class Day extends React.Component {
     render() {
+      var dayOfWeek = this.props.day.format("dd"),
+          weekend = false;
+      if ( dayOfWeek === "Sa" || dayOfWeek === "Su" ) {
+        weekend = true
+      }
+      var classes = classNames({
+          'day': true,
+          'weekend': weekend
+      });
         return (
-            <div className="day">
+            <div className={ classes }>
                 <div className="date">
                     { this.props.day.format("D") }
                 </div>

@@ -43,9 +43,15 @@
     width: 100%;
     border: 1px gray;
     display: flex;
+    margin: 1px;
+}
+
+.weekend {
+  background-color: lightgray;
 }
 
 .date {
     padding: 5px;
     background-color: white;
+    height: 15%;
 }
