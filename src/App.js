@@ -48,7 +48,7 @@ class App extends Component {
 class Week extends React.Component {
   render() {
     return (
-      <div>
+      <div className="week">
           { this.props.week.map(day => {
                 return <Day key={day.date()}
                              day={day}/>;
@@ -61,7 +61,7 @@ class Week extends React.Component {
 class Day extends React.Component {
     render() {
         return (
-            <div>{ this.props.day.format("M / D")}</div>
+            <div className="day">{ this.props.day.format("D")}</div>
         )
     }
 }
