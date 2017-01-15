@@ -47,28 +47,54 @@ class App extends Component {
         )
     }
 
-    addWeek(e) {
-      console.log("addWeek");
+    moveWeek(e) {
+      this.state.weeks.forEach(week => {
+        week.forEach(day => {
+          day.add(e.target.value, 'week');
+        })
+      })
 
-      var tempWeeks=[];
+      this.setState({ weeks: this.state.weeks })
+    }
 
-      this.setState({ weeks: tempWeeks })
+    numWeeks(e) {
+      debugger
+      var newWeekCount = this.state.weekCount + Number(e.target.value)
+      if ( newWeekCount < 2 ) { newWeekCount = 2 ;}
+      if ( newWeekCount > 8 ) { newWeekCount = 8 ;}
+      this.setWeeks(newWeekCount);
+      this.setState({weekCount: newWeekCount});
+    }
+
+    showWeeks(){
+      if (this.state.weeks[0]) {
+        return(
+          <div className="calendar">
+            <Week key={this.state.weeks[0][0].dayOfYear()}
+                  week={this.state.weeks[0]}
+                  firstWeek={1}/>
+            { this.state.weeks.slice(1).map(week => {
+                  return <Week key={week[0].dayOfYear()}
+                               week={week}/>;
+              }) }
+          </div>
+        )
+      }
     }
 
   render() {
     return (
       <div className="App">
         <div className="controls">
-          <button onClick={ this.addWeek }>add 1 week</button>
+          <button onClick={ this.moveWeek.bind(this) } value="-1">back 1 week</button>
+          <button onClick={ this.moveWeek.bind(this) } value="1">forward 1 week</button>
+          <button onClick={ this.numWeeks.bind(this) } value="-1">1 less week</button>
+          <button onClick={ this.numWeeks.bind(this) } value="1">1 more week</button>
+
           <button>hohoho</button>
         </div>
-        <div className="calendar">
-          { this.dayNames() }
-          { this.state.weeks.map(week => {
-                return <Week key={week[0].date()}
-                             week={week}/>;
-            }) }
-        </div>
+        { this.dayNames() }
+        { this.showWeeks() }
       </div>
     );
   }
@@ -80,7 +106,8 @@ class Week extends React.Component {
       <div className="week">
           { this.props.week.map(day => {
                 return <Day key={day.date()}
-                             day={day}/>;
+                             day={day}
+                             firstWeek={ this.props.firstWeek }/>;
             }) }
       </div>
     );
@@ -96,8 +123,8 @@ class Day extends React.Component {
       if ( dayOfWeek === "Sa" || dayOfWeek === "Su" ) {
         weekend = true
       }
-      if ( this.props.day.date() < 8 ) { firstWeek = true; }
-      if ( this.props.day.date() === 1 ) { firstDay = true; }
+      if ( this.props.day.date() < 8 && !this.props.firstWeek) { firstWeek = true; }
+      if ( this.props.day.date() === 1 && this.props.day.format("d") !== "0" ) { firstDay = true; }
       var classes = classNames({
           'day': true,
           'weekend': weekend,

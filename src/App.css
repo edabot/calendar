@@ -57,6 +57,7 @@
 
 .first-week {
   margin-top: 2px;
+  height: 98%;
 }
 
 .first-day {
@@ -65,9 +66,11 @@
 }
 
 .day-names {
+  width: 1000px;
   display: flex;
   flex-direction: row;
-  height: 100px;
+  height: 20px;
+  margin: 0 auto;
 }
 
 .day-name {
@@ -78,4 +81,8 @@
   .controls {
     display: none;
   }
+}
+
+.controls {
+  margin-bottom: 10px;
 }
