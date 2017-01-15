@@ -23,9 +23,18 @@
   to { transform: rotate(360deg); }
 }
 
+.content {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.month-range {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
 .calendar {
-    width: 1000px;
-    height: 700px;
+    height: 670px;
     display: flex;
     flex-direction: column;
     margin: 0 auto;

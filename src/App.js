@@ -82,6 +82,27 @@ class App extends Component {
       }
     }
 
+    monthRange() {
+      var firstText, lastText, text;
+      if ( this.state.weeks[0] ) {
+        firstText = this.state.weeks[0][0].format("MMM YYYY");
+        lastText = this.state.weeks[this.state.weekCount - 1][6].format("MMM YYYY");
+      }
+
+      if ( firstText === lastText ) {
+        text = firstText
+      } else {
+        text = firstText + " - " + lastText
+      }
+
+      return (
+        <div className="month-range">
+          { text }
+        </div>
+
+      )
+    }
+
   render() {
     return (
       <div className="App">
@@ -90,11 +111,12 @@ class App extends Component {
           <button onClick={ this.moveWeek.bind(this) } value="1">forward 1 week</button>
           <button onClick={ this.numWeeks.bind(this) } value="-1">1 less week</button>
           <button onClick={ this.numWeeks.bind(this) } value="1">1 more week</button>
-
-          <button>hohoho</button>
         </div>
-        { this.dayNames() }
-        { this.showWeeks() }
+        <div className="content">
+          { this.monthRange() }
+          { this.dayNames() }
+          { this.showWeeks() }
+        </div>
       </div>
     );
   }
