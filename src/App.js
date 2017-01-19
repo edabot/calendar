@@ -93,8 +93,12 @@ class App extends Component {
 
           <button>hohoho</button>
         </div>
-        { this.dayNames() }
-        { this.showWeeks() }
+        <div className="rotator">
+            <div className="container">
+                { this.dayNames() }
+                { this.showWeeks() }
+            </div>
+        </div>
       </div>
     );
   }
