@@ -112,10 +112,12 @@ class App extends Component {
           <button onClick={ this.numWeeks.bind(this) } value="-1">1 less week</button>
           <button onClick={ this.numWeeks.bind(this) } value="1">1 more week</button>
         </div>
-        <div className="content">
-          { this.monthRange() }
-          { this.dayNames() }
-          { this.showWeeks() }
+        <div className="rotator">
+          <div className="container">
+              { this.monthRange() }
+                { this.dayNames() }
+                { this.showWeeks() }
+            </div>
         </div>
       </div>
     );
