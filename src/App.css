@@ -23,12 +23,13 @@
   height: 8in;
   margin: 0 auto;
 }
-
-.rotator {
-  transform: rotate(90deg);
-}
-.controls {
-  display: none;
+@media print {  
+  .rotator {
+    transform: rotate(90deg);
+  }
+  .controls {
+    display: none;
+  }
 }
 
 .month-range {
