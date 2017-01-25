@@ -2,34 +2,50 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
 .container {
-  width: 9.7in;
+  width: 9.5in;
   height: 8in;
   margin: 0 auto;
 }
-@media print {  
+
+@media print {
   .rotator {
     transform: rotate(90deg);
   }
   .controls {
     display: none;
   }
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.button-group {
+  margin: 0 10px;
+}
+
+.btn {
+    border: none;
+    color: white;
+    padding: 6px 13px;
+    margin: 3px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 2px;
+}
+
+.shift {
+   background-color: #4CAF50;
+}
+
+.scale {
+  background-color: #008CBA;
 }
 
 .month-range {

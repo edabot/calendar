@@ -107,10 +107,16 @@ class App extends Component {
     return (
       <div className="App">
         <div className="controls">
-          <button onClick={ this.moveWeek.bind(this) } value="-1">back 1 week</button>
-          <button onClick={ this.moveWeek.bind(this) } value="1">forward 1 week</button>
-          <button onClick={ this.numWeeks.bind(this) } value="-1">1 less week</button>
-          <button onClick={ this.numWeeks.bind(this) } value="1">1 more week</button>
+          <div className="buttons">
+            <div className="button-group">
+              <button className="btn shift" onClick={ this.moveWeek.bind(this) } value="-1">back 1 week</button>
+              <button className="btn shift" onClick={ this.moveWeek.bind(this) } value="1">forward 1 week</button>
+            </div>
+            <div className="button-group">
+              <button className="btn scale" onClick={ this.numWeeks.bind(this) } value="-1">1 less week</button>
+              <button className="btn scale" onClick={ this.numWeeks.bind(this) } value="1">1 more week</button>
+            </div>
+          </div>
         </div>
         <div className="rotator">
           <div className="container">
