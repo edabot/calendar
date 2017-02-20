@@ -24,7 +24,7 @@ class App extends Component {
         var tempDays = [],
             tempWeeks = [];
         for ( let i=0; i < weeks * 7; i++ ) {
-            tempDays[i] = moment().startOf('week').add( i, 'days')
+            tempDays[i] = moment(this.state.now).startOf('week').add( i, 'days')
         }
         for ( let i=0; i < weeks; i++ ) {
             tempWeeks[i] = tempDays.slice(i * 7, i * 7 + 7);
@@ -54,7 +54,9 @@ class App extends Component {
         })
       })
 
-      this.setState({ weeks: this.state.weeks })
+      var newStart = this.state.now.add(e.target.value, 'week');
+
+      this.setState({ now: newStart, weeks: this.state.weeks })
     }
 
     numWeeks(e) {
