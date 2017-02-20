@@ -58,7 +58,6 @@ class App extends Component {
     }
 
     numWeeks(e) {
-      debugger
       var newWeekCount = this.state.weekCount + Number(e.target.value)
       if ( newWeekCount < 2 ) { newWeekCount = 2 ;}
       if ( newWeekCount > 8 ) { newWeekCount = 8 ;}
@@ -102,6 +101,11 @@ class App extends Component {
 
       )
     }
+    toggleLayout() {
+      document.getElementsByClassName("super")[0].classList.toggle("rotator")
+      document.getElementsByClassName("container")[0].classList.toggle("landscape")
+      document.getElementsByClassName("container")[0].classList.toggle("portrait")
+    }
 
   render() {
     return (
@@ -116,10 +120,13 @@ class App extends Component {
               <button className="btn scale" onClick={ this.numWeeks.bind(this) } value="-1">1 less week</button>
               <button className="btn scale" onClick={ this.numWeeks.bind(this) } value="1">1 more week</button>
             </div>
+            <div className="button-group">
+              <button className="btn scale" onClick={ this.toggleLayout } >portrait/landscape</button>
+            </div>
           </div>
         </div>
-        <div className="rotator">
-          <div className="container">
+        <div className="super rotator">
+          <div className="container landscape">
               { this.monthRange() }
                 { this.dayNames() }
                 { this.showWeeks() }
