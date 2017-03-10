@@ -127,8 +127,8 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <div className="super rotator">
-          <div className="container landscape">
+        <div className="super">
+          <div className="container portrait">
               { this.monthRange() }
                 { this.dayNames() }
                 { this.showWeeks() }
