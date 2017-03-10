@@ -3,14 +3,14 @@
 }
 
 .landscape {
-  width: 10in;
-  height: 7.2in;
+  width: 80vw;
+  height: 60vw;
   margin: 0 auto;
   padding: 0 30px;
 }
 .portrait {
-  width: 8in;
-  height: 10in;
+  width: 60vw;
+  height: 80vw;
   margin: 0 auto;
 }
 
@@ -20,6 +20,17 @@
   }
   .controls {
     display: none;
+  }
+  .landscape {
+    width: 10in;
+    height: 7.2in;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+  .portrait {
+    width: 8in;
+    height: 10in;
+    margin: 0 auto;
   }
 }
 
