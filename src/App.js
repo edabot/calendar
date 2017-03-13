@@ -125,6 +125,9 @@ class App extends Component {
             <div className="button-group">
               <button className="btn scale" onClick={ this.toggleLayout } >portrait/landscape</button>
             </div>
+            <div className="button-group">
+                <button className="btn print" onClick={ window.print } >print</button>
+            </div>
           </div>
         </div>
         <div className="super">

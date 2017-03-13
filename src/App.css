@@ -14,6 +14,10 @@
   margin: 0 auto;
 }
 
+@page {
+    size: letter;
+}
+
 @media print {
   .rotator {
     transform: rotate(90deg);
@@ -22,16 +26,17 @@
     display: none;
   }
   .landscape {
-    width: 10in;
+    width: 9in;
     height: 7.2in;
     margin: 0 auto;
     padding: 0 30px;
   }
   .portrait {
     width: 8in;
-    height: 10in;
+    height: 9.5in;
     margin: 0 auto;
   }
+
 }
 
 .buttons {
@@ -114,6 +119,7 @@
 }
 
 .day-names {
+  font-size: 1.4vw;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -124,7 +130,6 @@
 .day-name {
   width: 100%;
 }
-
 
 .controls {
   margin-bottom: 10px;
