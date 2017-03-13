@@ -71,6 +71,14 @@
   background-color: #008CBA;
 }
 
+.orientation {
+    background-color: #dddddd;
+}
+
+.active{
+    background-color: #008CBA;
+}
+
 .month-range {
   font-size: 2em;
   padding-bottom: 20px;

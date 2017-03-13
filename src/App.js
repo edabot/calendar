@@ -107,6 +107,8 @@ class App extends Component {
       document.getElementsByClassName("super")[0].classList.toggle("rotator")
       document.getElementsByClassName("container")[0].classList.toggle("landscape")
       document.getElementsByClassName("container")[0].classList.toggle("portrait")
+      document.getElementsByClassName("orientation")[0].classList.toggle("active")
+      document.getElementsByClassName("orientation")[1].classList.toggle("active")
     }
 
   render() {
@@ -123,7 +125,8 @@ class App extends Component {
               <button className="btn scale" onClick={ this.numWeeks.bind(this) } value="1">1 more week</button>
             </div>
             <div className="button-group">
-              <button className="btn scale" onClick={ this.toggleLayout } >portrait/landscape</button>
+              <button className="btn orientation active" onClick={ this.toggleLayout } >portrait</button>
+              <button className="btn orientation" onClick={ this.toggleLayout } >landscape</button>
             </div>
             <div className="button-group">
                 <button className="btn print" onClick={ window.print } >print</button>
