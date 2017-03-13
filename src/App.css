@@ -2,6 +2,12 @@
   text-align: center;
 }
 
+.container {
+    padding: 20px;
+    border: 1px solid lightgray;
+    box-shadow: 3px 3px 3px lightgray;
+}
+
 .landscape {
   width: 80vw;
   height: 60vw;
@@ -15,7 +21,7 @@
 }
 
 .footer {
-    visibility: visible;
+    visibility: hidden;
 }
 
 @page {
@@ -23,6 +29,13 @@
 }
 
 @media print {
+
+    .container {
+        padding: 0;
+        border: none;
+        box-shadow: none;
+    }
+
   .rotator {
     transform: rotate(90deg);
   }
@@ -52,7 +65,7 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  margin: 0 auto;
+  margin: 20px auto;
   justify-content: center;
 }
 
