@@ -136,8 +136,9 @@ class App extends Component {
         <div className="super">
           <div className="container portrait">
               { this.monthRange() }
-                { this.dayNames() }
-                { this.showWeeks() }
+              { this.dayNames() }
+              { this.showWeeks() }
+              <div className="footer">supamoto.co</div>
             </div>
         </div>
       </div>
