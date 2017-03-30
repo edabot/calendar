@@ -85,6 +85,7 @@ class App extends Component {
                   firstWeek={1}/>
             { this.state.weeks.slice(1).map(week => {
                   return <Week key={week[0].dayOfYear()}
+                              changeText={this.changeText.bind(this)}
                                 allText={this.state.text}
                                week={week}/>;
               }) }
