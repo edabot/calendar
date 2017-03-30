@@ -3,6 +3,10 @@ import classNames from 'classnames';
 
 class Day extends React.Component {
 
+    onChange( e ) {
+        this.props.changeText(this.props.day.format(), e.target.value);
+    }
+
     render() {
       var dayOfWeek = this.props.day.format("dd"),
           weekend = false,
@@ -25,7 +29,7 @@ class Day extends React.Component {
                     { this.props.day.format("D") }
                 </div>
                 <div className="textarea">
-                    <textarea />
+                    <textarea value={this.props.dayText} onChange={this.onChange.bind(this)}/>
                 </div>
             </div>
         )

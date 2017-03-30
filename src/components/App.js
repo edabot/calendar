@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
 import moment from 'moment-timezone';
-import classNames from 'classnames';
 
 import Day from './Day.js';
 
@@ -14,7 +13,8 @@ class App extends Component {
           weeks: [],
           dayNames: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
           weekStart: "Sun",
-          weekCount: 4
+          weekCount: 4,
+          text: {}
       };
     }
 
@@ -32,6 +32,11 @@ class App extends Component {
             tempWeeks[i] = tempDays.slice(i * 7, i * 7 + 7);
         }
         this.setState( { weeks: tempWeeks } );
+    }
+
+    changeText(day, text) {
+        let newTextObject = Object.assign( {}, this.state.text, { [day]: text } );
+        this.setState( {text: newTextObject} );
     }
 
     dayNames() {
@@ -75,9 +80,12 @@ class App extends Component {
           <div className="calendar">
             <Week key={this.state.weeks[0][0].dayOfYear()}
                   week={this.state.weeks[0]}
+                  allText={this.state.text}
+                  changeText={this.changeText.bind(this)}
                   firstWeek={1}/>
             { this.state.weeks.slice(1).map(week => {
                   return <Week key={week[0].dayOfYear()}
+                                allText={this.state.text}
                                week={week}/>;
               }) }
           </div>
@@ -153,8 +161,11 @@ class Week extends React.Component {
     return (
       <div className="week">
           { this.props.week.map(day => {
-                return <Day key={day.date()}
+                let dateText = day.format();
+                return <Day key={dateText}
                              day={day}
+                             dayText={this.props.allText[dateText]}
+                             changeText={this.props.changeText}
                              firstWeek={ this.props.firstWeek }/>;
             }) }
       </div>
