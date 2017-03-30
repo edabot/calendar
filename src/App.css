@@ -125,6 +125,8 @@
     width: 100%;
     border: .2px solid gray;
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .weekend {
@@ -134,7 +136,8 @@
 .date {
     padding: 5px;
     background-color: white;
-    height: 15%;
+    width: 18%;
+    height: 20px;
 }
 
 .first-week {
@@ -161,6 +164,10 @@
 
 .controls {
   margin-bottom: 10px;
+}
+
+.textarea {
+    height: 100%;
 }
 
 textarea {
