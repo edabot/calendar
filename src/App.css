@@ -167,4 +167,5 @@ textarea {
     border: 0;
     resize: none;
     background: none;
+    width: 100%;
 }
