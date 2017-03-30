@@ -58,7 +58,6 @@
       margin: 15px auto 0 auto;
       font-size: 12px;
   }
-
 }
 
 .buttons {
@@ -162,4 +161,10 @@
 
 .controls {
   margin-bottom: 10px;
+}
+
+textarea {
+    border: 0;
+    resize: none;
+    background: none;
 }

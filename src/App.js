@@ -182,6 +182,9 @@ class Day extends React.Component {
                 <div className="date">
                     { this.props.day.format("D") }
                 </div>
+                <div className="textarea">
+                    <textarea></textarea>
+                </div>
             </div>
         )
     }
